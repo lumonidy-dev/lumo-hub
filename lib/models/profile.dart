@@ -45,14 +45,6 @@ class Profile {
 
   @override
   String toString() {
-    final data = {
-      'name': name,
-      'email': email,
-      'phoneNumber': phoneNumber,
-      'photoUrl': photoUrl,
-      'displayName': displayName,
-      'role': role,
-    };
-    return data.toString();
+    return 'Profile(name: $name \n email: $email \n phoneNumber: $phoneNumber \n photoUrl: $photoUrl \n displayName: $displayName \n role: $role)'
   }
 }
