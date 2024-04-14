@@ -61,7 +61,7 @@ class LoginViewModel extends ChangeNotifier {
         email: email,
       );
 
-      print(profile);
+      print('Perfil de usuario: $profile');
 
       try {
         print("Registrando perfil en Firestore...");

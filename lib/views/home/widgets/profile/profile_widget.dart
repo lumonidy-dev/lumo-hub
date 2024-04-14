@@ -31,18 +31,20 @@ class ProfileWidgetState extends State<ProfileWidget> {
     _displayNameController = TextEditingController();
     _photoUrlController = TextEditingController();
 
-    // Future.microtask(() {
-    //   final profileViewModel =
-    //       Provider.of<ProfileViewModel>(context, listen: false);
-    //   // if (profileViewModel.isAuthenticated) {
-    //   //   _loadProfileData();
-    //   // }
-    // });
+    Future.microtask(() {
+      final profileViewModel =
+          Provider.of<ProfileViewModel>(context, listen: false);
+      if (profileViewModel.isAuthenticated) {
+        _loadProfileData();
+      }
+    });
   }
 
   Future<void> _loadProfileData() async {
     await Provider.of<ProfileViewModel>(context, listen: false).fetchProfile();
-    _updateTextControllers();
+    if (mounted) {
+      _updateTextControllers();
+    }
   }
 
   void _updateTextControllers() {

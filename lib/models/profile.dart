@@ -42,4 +42,17 @@ class Profile {
       'role': role,
     };
   }
+
+  @override
+  String toString() {
+    final data = {
+      'name': name,
+      'email': email,
+      'phoneNumber': phoneNumber,
+      'photoUrl': photoUrl,
+      'displayName': displayName,
+      'role': role,
+    };
+    return data.toString();
+  }
 }
