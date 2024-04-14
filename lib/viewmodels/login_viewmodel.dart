@@ -55,16 +55,13 @@ class LoginViewModel extends ChangeNotifier {
       String? email = user.email;
       // Crear un perfil de usuario con la información obtenida
       Profile profile = Profile(
-        name: displayName!,
+        name: displayName,
         displayName: displayName,
         photoUrl: photoUrl,
         email: email,
       );
 
-      print('Perfil de usuario: $profile');
-
       try {
-        print("Registrando perfil en Firestore...");
         await _firestoreService.registerProfile(profile);
       } catch (e) {
         throw Exception('Error al registrar el perfil: $e');
