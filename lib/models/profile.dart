@@ -1,5 +1,5 @@
 class Profile {
-  final String name;
+  final String? name;
   final String? email;
   final String phoneNumber;
   String? photoUrl;
@@ -8,15 +8,16 @@ class Profile {
 
   // Constructores
   Profile({
-    required this.name,
+    String? name,
     String? email,
     String? phoneNumber,
     String? photoUrl,
     String? displayName,
   })  : email = email ?? '',
+        name = name ?? '',
         phoneNumber = phoneNumber ?? '',
         photoUrl = photoUrl ?? '',
-        displayName = displayName ?? name,
+        displayName = displayName ?? name ?? '',
         role = 'client';
 
   // Método para convertir un documento de Firestore en un objeto Profile
