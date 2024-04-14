@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -50,13 +51,16 @@ class AuthService {
     githubProvider.addScope('read:user');
 
     try {
-      final UserCredential userCredential =
-          await _auth.signInWithPopup(githubProvider);
+      final UserCredential userCredential;
 
-      // Obtiene el token de acceso de GitHub
+      if (kIsWeb) {
+        userCredential = await _auth.signInWithPopup(githubProvider);
+      } else {
+        userCredential = await _auth.signInWithProvider(githubProvider);
+      }
+
       final credential = userCredential.credential as OAuthCredential?;
 
-      // Asigna el token de acceso a _githubAccessToken
       _githubAccessToken = credential?.accessToken;
 
       return userCredential;

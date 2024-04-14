@@ -35,7 +35,7 @@ class LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Bienvenido', style: Styles.titleStyle),
+              const Text('BienveLumo !', style: Styles.titleStyle),
               const SizedBox(height: 20),
               CustomTextField(
                 controller: _emailController,

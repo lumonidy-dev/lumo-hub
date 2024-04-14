@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
             create: (context) => GithubViewModel(authService)),
       ],
       child: MaterialApp(
-        title: 'Mi aplicación',
+        title: 'Lumo Hub',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           appBarTheme: AppBarTheme(color: Colors.blue[800]),
