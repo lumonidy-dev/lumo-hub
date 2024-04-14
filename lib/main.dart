@@ -12,11 +12,21 @@ import 'services/auth_service.dart';
 import 'services/firestore_service.dart';
 import 'services/storage_service.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase App Check
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Initialize Firebase App Check
+  await FirebaseAppCheck.instance.activate(
+    webProvider:
+        ReCaptchaV3Provider('6Le4dropAAAAAOugQMowaCuD_w0CICq-JLECBS0y'),
+    androidProvider: AndroidProvider.playIntegrity,
   );
 
   runApp(const MyApp());

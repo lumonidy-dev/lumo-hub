@@ -57,3 +57,12 @@ firestore.indexes.json
 firestore.rules
 storage.rules
 firebase*.*
+.firebaserc 
+.firebase/
+
+
+#.jks file
+*.jks
+
+
+
