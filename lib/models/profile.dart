@@ -45,6 +45,6 @@ class Profile {
 
   @override
   String toString() {
-    return 'Profile(name: $name \n email: $email \n phoneNumber: $phoneNumber \n photoUrl: $photoUrl \n displayName: $displayName \n role: $role)'
+    return 'Profile(name: $name \n email: $email \n phoneNumber: $phoneNumber \n photoUrl: $photoUrl \n displayName: $displayName \n role: $role)';
   }
 }
