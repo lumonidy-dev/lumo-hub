@@ -22,6 +22,7 @@ dependencies:
   http: ^1.2.1
   material_design_icons_flutter: ^7.0.7296
   firebase_app_check: ^0.2.2+1
+  cupertino_icons: ^1.0.6
 
 
 dev_dependencies:

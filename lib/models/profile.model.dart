@@ -1,23 +1,24 @@
 class Profile {
   final String? name;
   final String? email;
-  final String phoneNumber;
+  final String? phone;
+  final String? displayName;
   String? photoUrl;
-  final String displayName;
   final String role;
 
   // Constructores
   Profile({
     String? name,
     String? email,
-    String? phoneNumber,
+    String? phone,
     String? photoUrl,
     String? displayName,
-  })  : email = email ?? '',
-        name = name ?? '',
-        phoneNumber = phoneNumber ?? '',
-        photoUrl = photoUrl ?? '',
-        displayName = displayName ?? name ?? '',
+  })  : email = email ?? 'No disponible',
+        name = name ?? 'No disponible',
+        phone = phone ?? 'No disponible',
+        photoUrl = photoUrl ??
+            'https://firebasestorage.googleapis.com/v0/b/lumo-ghub.appspot.com/o/users_profile%2Fb0fpiXJ9qhYywvKd5AOHehw2WwU2%2FimgProfile.gif?alt=media',
+        displayName = displayName ?? 'No disponible',
         role = 'client';
 
   // Método para convertir un documento de Firestore en un objeto Profile
@@ -25,7 +26,7 @@ class Profile {
     return Profile(
       name: data['name'] ?? '',
       email: data['email'] ?? '',
-      phoneNumber: data['phoneNumber'] ?? '',
+      phone: data['phoneNumber'] ?? '',
       photoUrl: data['photoUrl'] ?? '',
       displayName: data['displayName'] ?? data['name'] ?? '',
     );
@@ -36,7 +37,7 @@ class Profile {
     return {
       'name': name,
       'email': email,
-      'phoneNumber': phoneNumber,
+      'phone': phone,
       'photoUrl': photoUrl,
       'displayName': displayName,
       'role': role,
@@ -45,6 +46,6 @@ class Profile {
 
   @override
   String toString() {
-    return 'Profile(name: $name \n email: $email \n phoneNumber: $phoneNumber \n photoUrl: $photoUrl \n displayName: $displayName \n role: $role)';
+    return 'Profile(name: $name \n email: $email \n phoneNumber: $phone \n photoUrl: $photoUrl \n displayName: $displayName \n role: $role)';
   }
 }

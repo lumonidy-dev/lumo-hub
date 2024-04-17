@@ -68,5 +68,9 @@ flutter {
 }
 
 dependencies {
+    implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
     implementation 'com.google.firebase:firebase-appcheck-playintegrity:17.0.0'
+    implementation("com.google.firebase:firebase-appcheck-debug")
+    implementation 'com.google.android.gms:play-services-base:17.6.0'
+    implementation 'com.google.android.gms:play-services-basement:17.6.0'
 }
